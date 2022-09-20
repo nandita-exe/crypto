@@ -10,7 +10,9 @@
 // });
 
 var baseUrl = "https://api.coinranking.com/v2/coins?orderBy=price";
-var proxyUrl = "https://cors-anywhere.herokuapp.com/";
+// var proxyUrl = "https://cors-anywhere.herokuapp.com/";
+// var proxyUrl = "https://cors-anywhere.herokuapp.com/";
+var proxyUrl = "https://proxy.cors.sh/"
 var apiKey = "coinrankingc349bdb857aadf1cce8c260c374645db13793211217d145c";
 
 var apiUrl = `${proxyUrl}${baseUrl}`;
