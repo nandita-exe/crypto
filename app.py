@@ -56,7 +56,7 @@ with st.form(key='my_form'):
   # user_input=st.text_input("Enter coin name: ", 'BTC-USD')
   coin_name=user_input.upper()
   # period=int(input('Enter number of days: '))
-  period=st.slider(label='Enter number of days:', min_value=0, max_value=365, key=3)
+  period=st.slider(label='Enter number of days:', min_value=0, max_value=30, key=3)
 
   # period=st.number_input("Enter number of days", 10)
   submit_button = st.form_submit_button(label='Submit')
