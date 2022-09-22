@@ -66,8 +66,7 @@ $.ajax({
           },
             success: function(data, textStatus, request){
                 console.log(data);
-            }
- }) .then((response) => {
+                        .then((response) => {
     if (response.ok) {
       response.json().then((json) => {
         console.log(json.data);
@@ -92,6 +91,8 @@ $.ajax({
       });
     }
   })
+            }
+ }) 
 //   .catch((error) => {
 //     console.log(error);
 //   });
