@@ -58,7 +58,8 @@ console.log(apiUrl);
 $.ajax({
             headers: { "Accept": "application/json"},
             type: 'GET',
-            url: `${apiUrl}/${apiKey}`,
+            url: `${apiUrl}`,
+            'X-My-Custom-Header': `${apiKey}`,
             crossDomain: true,
             beforeSend: function(xhr){
                 xhr.withCredentials = true;
