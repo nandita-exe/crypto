@@ -59,7 +59,10 @@ fetch(`${proxyUrl}${baseUrl}`, {
     headers: {
       'Content-Type': 'application/json',
       'X-My-Custom-Header': `${apiKey}`,
-      'Access-Control-Allow-Origin': "*"
+      'Access-Control-Allow-Origin': "*",
+      "Accept": "application/json",
+//     "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "*"
     }
 })
   .then((response) => {
