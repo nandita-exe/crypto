@@ -55,60 +55,18 @@ console.log(apiUrl);
 //     console.log(error);
 //   });
 
-$.ajax({
-            headers: { "Accept": "application/json"},
-            type: 'GET',
-            url: `${apiUrl}`,
-            'X-My-Custom-Header': `${apiKey}`,
-            crossDomain: true,
-            beforeSend: function(xhr){
-                xhr.withCredentials = true;
-          },
-            success: function(data, textStatus, request){
-                console.log(data);
-                        .then((response) => {
-    if (response.ok) {
-      response.json().then((json) => {
-        console.log(json.data);
-        let coinsData = json.data.coins;
-
-        if (coinsData.length > 0) {
-          var cryptoCoin = "";
-        }
-        //For Loop Starts
-        coinsData.forEach((coin) => {
-          cryptoCoin += "<tr>";
-        //   cryptoCoin += `<td> ${coin.uuid} </td>`;
-        //   cryptoCoin += `<td> ${coin.btcPrice} </td>`;
-          cryptoCoin += `<td> ${coin.rank}</td>`;
-          cryptoCoin += `<td> ${coin.tier} </td>`;
-          cryptoCoin += `<td> ${coin.name}</td>`;
-          cryptoCoin += `<td> $${Math.round(coin.price)} Billion</td>`;
-          cryptoCoin += `<td> ${coin.symbol}</td>`;"<tr>";
-        });
-        //For Loop Ends
-        document.getElementById("data").innerHTML = cryptoCoin;
-      });
-    }
-  })
-            }
- }) 
-//   .catch((error) => {
-//     console.log(error);
-//   });
-
-// fetch(`${proxyUrl}${baseUrl}`, { 
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'X-My-Custom-Header': `${apiKey}`,
-//       'Access-Control-Allow-Origin': "*",
-//       "Accept": "application/json",
-// //     "Access-Control-Allow-Origin": "*",
-//     "Access-Control-Allow-Methods": "*"
-//     }
-// })
-//   .then((response) => {
+// $.ajax({
+//             headers: { "Accept": "application/json"},
+//             type: 'GET',
+//             url: `${apiUrl}`,
+//             'X-My-Custom-Header': `${apiKey}`,
+//             crossDomain: true,
+//             beforeSend: function(xhr){
+//                 xhr.withCredentials = true;
+//           },
+//             success: function(data, textStatus, request){
+//                 console.log(data);
+//                         .then((response) => {
 //     if (response.ok) {
 //       response.json().then((json) => {
 //         console.log(json.data);
@@ -133,7 +91,49 @@ $.ajax({
 //       });
 //     }
 //   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
+//             }
+//  }) 
+// //   .catch((error) => {
+// //     console.log(error);
+// //   });
+
+fetch(`${proxyUrl}${baseUrl}`, { 
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-My-Custom-Header': `${apiKey}`,
+      'Access-Control-Allow-Origin': "*",
+      "Accept": "application/json",
+//     "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "*"
+    }
+})
+  .then((response) => {
+    if (response.ok) {
+      response.json().then((json) => {
+        console.log(json.data);
+        let coinsData = json.data.coins;
+
+        if (coinsData.length > 0) {
+          var cryptoCoin = "";
+        }
+        //For Loop Starts
+        coinsData.forEach((coin) => {
+          cryptoCoin += "<tr>";
+        //   cryptoCoin += `<td> ${coin.uuid} </td>`;
+        //   cryptoCoin += `<td> ${coin.btcPrice} </td>`;
+          cryptoCoin += `<td> ${coin.rank}</td>`;
+          cryptoCoin += `<td> ${coin.tier} </td>`;
+          cryptoCoin += `<td> ${coin.name}</td>`;
+          cryptoCoin += `<td> $${Math.round(coin.price)} Billion</td>`;
+          cryptoCoin += `<td> ${coin.symbol}</td>`;"<tr>";
+        });
+        //For Loop Ends
+        document.getElementById("data").innerHTML = cryptoCoin;
+      });
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
