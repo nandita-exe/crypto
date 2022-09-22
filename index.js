@@ -91,9 +91,9 @@ $.ajax({
       });
     }
   })
-  .catch((error) => {
-    console.log(error);
-  });
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 // fetch(`${proxyUrl}${baseUrl}`, { 
 //     method: 'GET',
