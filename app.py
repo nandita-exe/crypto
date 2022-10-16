@@ -120,5 +120,5 @@ from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
 # print(r2_score(metric_df.y, metric_df.yhat))
 st.write("R2 score", r2_score(metric_df.y, metric_df.yhat))
-st.write("R2 score", mean_squared_error(metric_df.y, metric_df.yhat))
-st.write("R2 score", mean_absolute_error(metric_df.y, metric_df.yhat))
+st.write("Mean Squared Error", mean_squared_error(metric_df.y, metric_df.yhat))
+st.write("Mean Absolute Error", mean_absolute_error(metric_df.y, metric_df.yhat))
