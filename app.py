@@ -112,3 +112,8 @@ st.plotly_chart(figure, use_container_width=True)
 
 # with open('footer.html') as a:
 #     st.markdown(a.read(), unsafe_allow_html=True)
+
+from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
+r2_score(df["ds"], df["y"])
+print(r2_score)
+st.write("score", r2_score)
