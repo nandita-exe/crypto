@@ -113,7 +113,10 @@ st.plotly_chart(figure, use_container_width=True)
 # with open('footer.html') as a:
 #     st.markdown(a.read(), unsafe_allow_html=True)
 
+
+metric_df = forecast.set_index('ds')[['yhat']].join(df.set_index('ds').y).reset_index()
+metric_df.dropna(inplace=True)
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-r2_score(df["y"], df["yhat"])
+r2_score(metric_df.y, metric_df.yhat)
 print(r2_score)
 st.write("score", r2_score)
