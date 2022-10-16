@@ -52,11 +52,11 @@ dicts=data2['all_cryptocurrencies_us']['quotes']
 symbols = [d['symbol'] for d in dicts]
 # symbols
 with st.form(key='my_form'):
-  user_input=st.selectbox('Enter coin symbol: ', symbols[:20])
+  user_input=st.selectbox('Enter coin symbol: ', symbols[:30])
   # user_input=st.text_input("Enter coin name: ", 'BTC-USD')
   coin_name=user_input.upper()
   # period=int(input('Enter number of days: '))
-  period=st.slider(label='Enter number of days:', min_value=0, max_value=30, key=3)
+  period=st.slider(label='Enter number of days:', min_value=1, max_value=7, key=3)
 
   # period=st.number_input("Enter number of days", 10)
   submit_button = st.form_submit_button(label='Submit')
