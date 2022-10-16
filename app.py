@@ -118,5 +118,5 @@ metric_df = forecast.set_index('ds')[['yhat']].join(df.set_index('ds').y).reset_
 metric_df.dropna(inplace=True)
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
-print(r2_score(metric_df.y, metric_df.yhat))
-st.write("score", r2_score(metric_df.y, metric_df.yhat))
+# print(r2_score(metric_df.y, metric_df.yhat))
+st.write("R2 score", r2_score(metric_df.y, metric_df.yhat))
