@@ -114,6 +114,6 @@ st.plotly_chart(figure, use_container_width=True)
 #     st.markdown(a.read(), unsafe_allow_html=True)
 
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
-r2_score(df["ds"], df["y"])
+r2_score(df.y, df.yhat)
 print(r2_score)
 st.write("score", r2_score)
